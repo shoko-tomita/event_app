@@ -1,0 +1,68 @@
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bootflat/2.0.4/css/bootflat.min.css');
+
+body {
+    padding: 200px;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+}
+
+.btn {
+    margin: 10px;
+    /* display: inline-flex; */
+}
+
+.nav {
+    display: inline-flex;
+}
+
+
+/* ローディング画面 */
+ #loading {
+    width: 100vw;
+    height: 100vh;
+    transition: all 1s;
+    background-color: #0bd;
+    /* 以下のコードを追加 */
+    position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  }
+  .spinner {
+    width: 100px;
+    height: 100px;
+    margin: 200px auto;
+    background-color: #fff;
+    border-radius: 100%;
+    animation: sk-scaleout 1.0s infinite ease-in-out;
+  }
+  /* ローディングアニメーション */
+   @keyframes sk-scaleout {
+    0% {
+      transform: scale(0);
+    } 100% {
+      transform: scale(1.0);
+      opacity: 0;
+    }
+  }
+
+  /* コンテンツ部分の装飾 */
+   .gallery {
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .loaded {
+    opacity: 0;
+    visibility: hidden;
+  }
