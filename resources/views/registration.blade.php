@@ -17,8 +17,8 @@
     <main>
 
         {{-- 遷移先ページに記述がわからない --}}
-        <a class="btn btn-primary" href="{{ route('office_registration') }}" role="button">事業所</a>
-        <a class="btn btn-primary" href="{{ route('general_registration') }}" role="button">一般ユーザー</a>
+        <a class="btn btn-primary" href="{{ route('office_registration') }}" role="button" method="POST">事業所</a>
+        <a class="btn btn-primary" href="{{ route('general_registration') }}" role="button" method="POST">一般ユーザー</a>
 
        <p>ですか？</p>
     </main>

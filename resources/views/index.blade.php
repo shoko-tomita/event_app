@@ -16,10 +16,10 @@
     </header>
     <main>
 
-        <a class="btn btn-primary" href="{{ route('registration') }}" role="button">新規登録</a>
-        <a class="btn btn-primary" href="{{ route('login') }}" role="button">登録済</a>
+        <a class="btn btn-primary" href="{{ route('registration') }}" role="button" method="POST">新規登録</a>
+        <a class="btn btn-primary" href="{{ route('login') }}" role="button" method="POST">登録済</a>
 
-        <a href="{{ route('thread_all') }}" class="link-primary">閲覧のみ</a>
+        <a href="{{ route('thread_all') }}" class="link-primary" method="POST">閲覧のみ</a>
 
     </main>
 

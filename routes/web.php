@@ -16,7 +16,7 @@
 // });
 
 Route::get('/',function(){
-    return view ('registration');
+    return view ('index');
 });
 
 Route::post('/index/registration');
