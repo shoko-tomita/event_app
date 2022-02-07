@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <title>事業所・一般ユーザー</title>
-    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="{{ asset("/css/style.css") }}">
 </head>
 
 <body>
@@ -15,8 +15,10 @@
         <button type="button" class="btn btn-link">Link</button>
     </header>
     <main>
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off">事業所</button>
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off">一般ユーザー</button>
+
+        {{-- 遷移先ページに記述がわからない --}}
+        <a class="btn btn-primary" href="{{ route('office_registration') }}" role="button">事業所</a>
+        <a class="btn btn-primary" href="{{ route('general_registration') }}" role="button">一般ユーザー</a>
 
        <p>ですか？</p>
     </main>

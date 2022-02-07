@@ -50,19 +50,8 @@ body {
     }
   }
 
-  /* コンテンツ部分の装飾 */
-   .gallery {
-    display: grid;
-    gap: .5rem;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-  img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-
-  .loaded {
+   .loaded {
     opacity: 0;
     visibility: hidden;
   }
+

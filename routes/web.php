@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+Route::get('/',function(){
+    return view ('registration');
 });
+
+Route::post('/index/registration');
+
+Route::post('/index/login');
+
+Auth::routes();

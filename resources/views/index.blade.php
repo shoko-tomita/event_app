@@ -15,10 +15,12 @@
         <button type="button" class="btn btn-link">Link</button>
     </header>
     <main>
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off">新規登録</button>
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off">登録済</button>
 
-        <button type="button" class="btn btn-link">閲覧のみ</button>
+        <a class="btn btn-primary" href="{{ route('registration') }}" role="button">新規登録</a>
+        <a class="btn btn-primary" href="{{ route('login') }}" role="button">登録済</a>
+
+        <a href="{{ route('thread_all') }}" class="link-primary">閲覧のみ</a>
+
     </main>
 
 </body>
