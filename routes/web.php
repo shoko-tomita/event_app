@@ -19,8 +19,9 @@ Route::get('/',function(){
     return view ('index');
 });
 
-Route::post('/index/registration');
 
-Route::post('/index/login');
+// Route::get('/general_registration', 'TaskController@index')->name('tasks.index');
+
+
 
 Auth::routes();

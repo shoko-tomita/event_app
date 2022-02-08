@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <title>一般ユーザー登録</title>
-    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="{{ asset("/css/style.css") }}">
 </head>
 
 <body>
@@ -20,6 +20,15 @@
          <!-- ユーザー登録で画像無くてもいいかな？
          mypageから画像登録でもいいかも -->
 
+         @if($errors->any())
+         <div class="alert alert-danger">
+           @foreach($errors->all() as $message)
+             <p>{{ $message }}</p>
+           @endforeach
+         </div>
+       @endif
+       <form action="{{ route('register') }}" method="POST">
+         @csrf
         <div class="input-group input-group-sm">
             <span class="input-group-text" id="input-group-sm-example">name</span>
             <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
@@ -33,6 +42,7 @@
             <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
           </div>
           <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off">login</button>
+        </form>
     </main>
 
 </body>
