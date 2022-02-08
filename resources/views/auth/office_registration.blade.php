@@ -21,6 +21,15 @@
         <!-- ユーザー登録で画像無くてもいいかな？ -->
         <!-- mypageから画像登録でもいいかも -->
 
+        @if($errors->any())
+         <div class="alert alert-danger">
+           @foreach($errors->all() as $message)
+             <p>{{ $message }}</p>
+           @endforeach
+         </div>
+       @endif
+       <form action="{{ route('register') }}" method="POST">
+         @csrf
         <div class="input-group input-group-sm">
             <span class="input-group-text" id="input-group-sm-example">name</span>
             <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
@@ -41,7 +50,7 @@
             <span class="input-group-text" id="input-group-sm-example">password</span>
             <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
         </div>
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off">login</button>
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off">登録</button>
     </main>
 
 </body>

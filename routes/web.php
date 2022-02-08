@@ -19,6 +19,10 @@ Route::get('/',function(){
     return view ('index');
 });
 
+Route::get('/thread_all',function(){
+    return view ('thread_all');
+})->name('thread_all');
+
 
 // Route::get('/general_registration', 'TaskController@index')->name('tasks.index');
 

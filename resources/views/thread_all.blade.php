@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <title>スレッド一覧</title>
-    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="{{ asset("/css/style.css") }}">
 </head>
 
 <body>
@@ -39,11 +39,10 @@
         </div>
           <!-- class=loadedの記述の位置がわからない -->
 
-        <img src="../../public/img/new017/new017_10.gif" alt="新着スレッド">
+          <img src="../public/img/new017/new017_10.gif" alt="新着スレッド">
         <!-- スレッド作成の内容が本来表示 -->
         <div class="card">
             <div class="card-header">
-
             </div>
             <div class="card-body">
               <h5 class="card-title">◯◯のイベント</h5>
@@ -52,7 +51,7 @@
             </div>
           </div>
     </main>
-    <script src="../../public/JS/app.js"></script>
+    <script src="../js/app.js"></script>
 </body>
 
 </html>

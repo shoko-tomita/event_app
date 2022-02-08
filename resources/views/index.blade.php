@@ -20,7 +20,7 @@
         <a class="btn btn-primary" href="" role="button" method="POST">事業登録</a>
         <a class="btn btn-primary" href="{{ route('login') }}" role="button" method="POST">登録済</a>
 
-        <a href="#" class="link-primary" method="POST">閲覧のみ</a>
+        <a href="{{ route('thread_all') }}" class="link-primary">閲覧のみ</a>
 
     </main>
 
