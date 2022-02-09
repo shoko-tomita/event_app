@@ -28,27 +28,27 @@
            @endforeach
          </div>
        @endif
-       <form action="{{ route('register') }}" method="POST">
+       <form action="{{ route('office_register') }}" method="POST">
          @csrf
         <div class="input-group input-group-sm">
             <span class="input-group-text" id="input-group-sm-example">name</span>
-            <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
+            <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm" method="POST">
         </div>
         <div class="input-group input-group-sm">
             <span class="input-group-text" id="input-group-sm-example">address</span>
-            <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
+            <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm" method="POST">
         </div>
         <div class="input-group input-group-sm">
             <span class="input-group-text" id="input-group-sm-example">email</span>
-            <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
+            <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm" method="POST">
         </div>
         <div class="input-group input-group-sm">
             <span class="input-group-text" id="input-group-sm-example">tel</span>
-            <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
+            <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm" method="POST">
         </div>
         <div class="input-group input-group-sm">
             <span class="input-group-text" id="input-group-sm-example">password</span>
-            <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
+            <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm" method="POST">
         </div>
         <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off">登録</button>
     </main>
