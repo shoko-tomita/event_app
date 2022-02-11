@@ -45,6 +45,7 @@ Route::group(['prefix' => 'user'], function() {
         'as' => 'user.profile'
         ]);
 
+        // test
 // Route::get('/general_registration', 'TaskController@index')->name('tasks.index');
 
 
