@@ -11,14 +11,12 @@ class GeneralTableSeeder extends Seeder
      */
     public function run()
     {
-        $name = ['test'];
-
-        foreach ($name as $name) {
-            DB::table('general')->insert([
-                'title' => $name,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ]);
-        }
+        DB::table('genaral')->insert([
+            'name' => 'test',
+            'email' => 'dummy@email.com',
+            'password' => bcrypt('test1234'),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
     }
 }

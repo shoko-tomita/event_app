@@ -33,17 +33,17 @@ Route::group(['prefix' => 'user'], function() {
       'as' => 'user.signup'
     ]);
 
-  });
+    });
 
-  Route::post('/signup',[
-    'uses' => 'UserController@postSignup',
-    'as' => 'user.signup'
-    ]);
+    Route::post('/signup',[
+        'uses' => 'UserController@postSignup',
+        'as' => 'user.signup'
+        ]);
 
-    Route::get('/profile',[
-    'uses' => 'UserController@getProfile',
-    'as' => 'user.profile'
-    ]);
+        Route::get('/profile',[
+        'uses' => 'UserController@getProfile',
+        'as' => 'user.profile'
+        ]);
 
 // Route::get('/general_registration', 'TaskController@index')->name('tasks.index');
 

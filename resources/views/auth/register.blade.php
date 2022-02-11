@@ -41,7 +41,7 @@
             <span class="input-group-text" id="input-group-sm-example">password</span>
             <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
           </div>
-          <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off">登録</button>
+          <button type="submit" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off">登録</button>
         </form>
     </main>
 

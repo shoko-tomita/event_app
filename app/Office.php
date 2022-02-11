@@ -16,7 +16,7 @@ class Office extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'office', 'email','tel', 'password','image',
+        'office','email','tel','address',  'password','image',
     ];
 
     /**

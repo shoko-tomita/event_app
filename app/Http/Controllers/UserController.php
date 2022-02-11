@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Users;
 
 class UserController extends Controller
 {
         public function getSignup(){
             return View('user.signup');
         }
+
+        public function getProfile(){
+            return view('user.signup');
+          }
 
         public function postSignup(Request $request){
             // バリデーション
@@ -21,7 +26,7 @@ class UserController extends Controller
             ]);
 
             // DBインサート
-            $user = new User([
+            $user = new Users([
               'name' => $request->input('name'),
               'email' => $request->input('email'),
               'password' => bcrypt($request->input('password')),
@@ -33,6 +38,6 @@ class UserController extends Controller
             $user->save();
 
             // リダイレクト
-            return redirect()->route('index');
+            return redirect()->route('thread_all');
           }
 }

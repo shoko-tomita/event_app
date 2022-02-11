@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <title>スレッド一覧</title>
+    <link rel="icon" href="{{ asset('/favicon.png') }}">
     <link rel="stylesheet" href="{{ asset("/css/style.css") }}">
 </head>
 
