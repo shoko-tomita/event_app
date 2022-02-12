@@ -30,7 +30,7 @@
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
           </ul>
-          <p>ユーザー画像</p>
+          <img class="atumal" src="{{ asset("/iOS-の画像.jpg") }}" alt="あつまる">
           <button type="button" class="btn btn-link"></button>
         </div>
     </header>
@@ -38,9 +38,8 @@
         <div id="loading">
             <div class="spinner"></div>
         </div>
-          <!-- class=loadedの記述の位置がわからない -->
 
-          <img src="../public/img/new017/new017_10.gif" alt="新着スレッド">
+          <img src="{{ asset("/img/new017/new017_10.gif") }}" alt="新着スレッド">
         <!-- スレッド作成の内容が本来表示 -->
         <div class="card">
             <div class="card-header">

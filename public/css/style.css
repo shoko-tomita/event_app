@@ -2,8 +2,9 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/bootflat/2.0.4/css/bootflat.min.css');
 
 body {
-    padding: 200px;
+    padding: 100px;
     box-sizing: border-box;
+    text-align: center;
 }
 
 .container {
@@ -17,6 +18,11 @@ body {
 
 .nav {
     display: inline-flex;
+}
+
+
+.atumal {
+    width: 200px;
 }
 
 

@@ -13,6 +13,7 @@
 <body>
     <header>
         <button type="button" class="btn btn-link">Link</button>
+        <img class="atumal" src="{{ asset("/iOS-の画像.jpg") }}" alt="あつまる">
     </header>
     <main>
         <a class="btn btn-primary" href="{{ route('register') }}" role="button" method="post">一般登録</a>
