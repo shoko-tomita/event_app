@@ -46,6 +46,7 @@ Route::group(['prefix' => 'user'], function() {
         ]);
 
         // test
+        // laravel study
 // Route::get('/general_registration', 'TaskController@index')->name('tasks.index');
 
 
