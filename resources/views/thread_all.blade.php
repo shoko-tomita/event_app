@@ -18,16 +18,22 @@
 
         <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Active</a>
+              <a class="nav-link active" aria-current="page" href="#">Foods</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#">Work shop</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#">Photo</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                <a class="nav-link" href="#">Beauty</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Seminar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Other</a>
             </li>
           </ul>
           <img class="atumal" src="{{ asset("/iOS-の画像.jpg") }}" alt="あつまる">
@@ -47,11 +53,34 @@
             <div class="card-body">
               <h5 class="card-title">◯◯のイベント</h5>
               <p class="card-text">スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容</p>
+
+                {{-- todoのフォルダの追加？Chapter3から
+              @foreach($folders as $folder)
+                <a href="{{ route('tasks.index', ['id' => $folder->id]) }}" class="list-group-item">
+                    {{ $folder->title }}
+                </a>
+              @endforeach --}}
+
+              {{-- @foreach($therads as $thread)
+                <a href="{{ route('thread_all', ['id' => $thread->id]) }}" class="list-group-item">
+                    {{ $thread->title }}
+                </a>
+              @endforeach --}}
+
               <a href="#" class="btn btn-primary">スレッド詳細</a>
             </div>
-          </div>
+            <a  href="#" id="logout">ログアウト</a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+        </div>
     </main>
-    <script src="../js/app.js"></script>
+    <script src="../js/app.js">
+    // document.getElementById('logout').addEventListener('click', function(event) {
+    //       event.preventDefault();
+    //       document.getElementById('logout-form').submit();
+    //     });
+    </script>
 </body>
 
 </html>

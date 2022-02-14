@@ -7,8 +7,15 @@
         if(cnt > 4){
             const spinner = document.getElementById('loading');
             spinner.classList.add('loaded');
-            clearTimeout(timeoutId);//timeoutIdをclearTimeoutで指定している
+            clearTimeout(timeoutId);
+            //timeoutIdをclearTimeoutで指定している
         }
     }
     loading();
+
+    document.getElementById('logout').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementById('logout-form').submit();
+      });
+
 }

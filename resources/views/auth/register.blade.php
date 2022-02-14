@@ -1,50 +1,43 @@
-<!DOCTYPE html>
-<html lang="ja">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>一般ユーザー登録</title>
-    <link rel="stylesheet" href="{{ asset("/css/style.css") }}">
-</head>
-
-<body>
-    <header>
-        <button type="button" class="btn btn-link"></button>
-    </header>
-    <main>
-        <img src="assets/images/bs-images/img-2x1.png" class="img-fluid" alt="img-fluid">
-
-         <!-- ユーザー登録で画像無くてもいいかな？
-         mypageから画像登録でもいいかも -->
-
-         @if($errors->any())
-         <div class="alert alert-danger">
-           @foreach($errors->all() as $message)
-             <p>{{ $message }}</p>
-           @endforeach
-         </div>
-       @endif
-       <form action="{{ route('register') }}" method="POST">
-         @csrf
-        <div class="input-group input-group-sm">
-            <span class="input-group-text" id="input-group-sm-example">name</span>
-            <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
+<link rel="stylesheet" href="{{ asset("/css/style.css") }}">
+@section('content')
+  <div class="container">
+    <div class="row">
+      <div class="col col-md-offset-3 col-md-6">
+        <nav class="panel panel-default">
+          <div class="panel-heading">一般ユーザー登録</div>
+          <div class="panel-body">
+            @if($errors->any())
+              <div class="alert alert-danger">
+                @foreach($errors->all() as $message)
+                  <p>{{ $message }}</p>
+                @endforeach
+              </div>
+            @endif
+            <form action="{{ route('register') }}" method="POST">
+              @csrf
+              <div class="form-group">
+                <label for="name">お名前</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" />
+              </div>
+              <div class="form-group">
+                <label for="email">メールアドレス</label>
+                <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}" />
+              </div>
+              <div class="form-group">
+                <label for="password">パスワード</label>
+                <input type="password" class="form-control" id="password" name="password" >
+              </div>
+              <div class="form-group">
+                <label for="password-confirm">パスワード（確認）</label>
+                <input type="password" class="form-control" id="password-confirm" name="password_confirmation">
+              </div>
+              <div class="text-right">
+                <button type="submit" class="btn btn-primary">登録</button>
+              </div>
+            </form>
           </div>
-        <div class="input-group input-group-sm">
-            <span class="input-group-text" id="input-group-sm-example">email</span>
-            <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-          </div>
-          <div class="input-group input-group-sm">
-            <span class="input-group-text" id="input-group-sm-example">password</span>
-            <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-          </div>
-          <button type="submit" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off">登録</button>
-        </form>
-    </main>
+        </nav>
 
-</body>
-<script src="../js/event.js"></script>
-</html>
+      </div>
+    </div>
+  </div>

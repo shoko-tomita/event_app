@@ -23,8 +23,18 @@
 
         <a href="{{ route('thread_all') }}" class="link-primary">閲覧のみ</a>
 
-    </main>
+        {{-- <a  href="#" id="logout">・ログアウト</a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+            </form> --}}
 
+    </main>
+    {{-- <script>
+        document.getElementById('logout').addEventListener('click', function(event) {
+          event.preventDefault();
+          document.getElementById('logout-form').submit();
+        });
+      </script> --}}
 </body>
 
 </html>

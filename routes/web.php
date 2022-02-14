@@ -12,6 +12,7 @@
 */
 
 
+
 Route::get('/',function(){
     return view ('index');
 });
@@ -47,7 +48,12 @@ Route::group(['prefix' => 'user'], function() {
 
 // Route::get('/general_registration', 'TaskController@index')->name('tasks.index');
 
-// TEST
-// TEST
+
+// Route::group(['middleware' => 'can:view,thread'], function() {
+
+//     Route::get('/threads/create', 'ThreadController@showCreateForm')->name('threads.create');
+//     Route::post('/'threads/create, 'ThreadController@create');
+
+// });
 
 Auth::routes();
