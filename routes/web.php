@@ -48,5 +48,6 @@ Route::group(['prefix' => 'user'], function() {
 // Route::get('/general_registration', 'TaskController@index')->name('tasks.index');
 
 // TEST
+// TEST
 
 Auth::routes();
