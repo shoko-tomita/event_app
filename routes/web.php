@@ -11,7 +11,7 @@
 |
 */
 
-
+Route::get('/index','IndexController@indexcreate')->name('index.create');
 
 Route::get('/',function(){
     return view ('index');
@@ -45,15 +45,15 @@ Route::group(['prefix' => 'user'], function() {
         'uses' => 'UserController@getProfile',
         'as' => 'user.profile'
         ]);
+        // ユーザー退会処理のルーティング
+        Route::post('/user', 'UsersController@withdrawal')->name('user.withdrawal');
 
-// Route::get('/general_registration', 'TaskController@index')->name('tasks.index');
 
+        // スレッド作成のルーティング
+        Route::get('/create', 'ThreadController@showCreateForm')->name('thread.create');
 
-// Route::group(['middleware' => 'can:view,thread'], function() {
+        // スレッド詳細のルーティング
+        Route::get('/disp', 'ThreadController@threadDisp')->name('thread.disp');
 
-//     Route::get('/threads/create', 'ThreadController@showCreateForm')->name('threads.create');
-//     Route::post('/'threads/create, 'ThreadController@create');
-
-// });
 
 Auth::routes();

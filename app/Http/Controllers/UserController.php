@@ -11,9 +11,9 @@ class UserController extends Controller
             return View('user.signup');
         }
 
-        public function getProfile(){
-            return view('user.signup');
-          }
+        // public function getProfile(){
+        //     return view('user.signup');
+        //   }
 
         public function postSignup(Request $request){
             // バリデーション

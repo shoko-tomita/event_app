@@ -11,11 +11,13 @@ class threadsTableSeeder extends Seeder
      */
     public function run()
     {
-        $titles = ['プライベート', '仕事', '旅行'];
+        $titles = ['プライベート'];
+        $detail = ['テストテストテストテストテスト'];
 
         foreach ($titles as $title) {
             DB::table('folders')->insert([
                 'title' => $title,
+                'thread_detail' => $detail,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);

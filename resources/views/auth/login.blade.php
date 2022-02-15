@@ -24,11 +24,11 @@
                 <input type="password" class="form-control" id="password" name="password" />
               </div>
 
-              <a href="{{ route('thread_all') }}" class="link-primary">送信</a>
+              {{-- <a href="{{ route('thread_all') }}" class="link-primary">送信</a> --}}
 
-              {{-- <div class="text-right">
+              <div class="text-right">
                 <button type="submit" class="btn btn-primary">送信</button>
-              </div> --}}
+              </div>
             </form>
           </div>
         </nav>

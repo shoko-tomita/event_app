@@ -37,8 +37,8 @@
             </li>
           </ul>
           <img class="atumal" src="{{ asset("/iOS-の画像.jpg") }}" alt="あつまる">
-          <button type="button" class="btn btn-link"></button>
-        </div>
+          <a href="" class="btn btn-primary">スレッド作成</a>
+
     </header>
     <main>
         <div id="loading">
@@ -47,6 +47,7 @@
 
           <img src="{{ asset("/img/new017/new017_10.gif") }}" alt="新着スレッド">
         <!-- スレッド作成の内容が本来表示 -->
+
         <div class="card">
             <div class="card-header">
             </div>
@@ -66,13 +67,24 @@
                     {{ $thread->title }}
                 </a>
               @endforeach --}}
-
-              <a href="#" class="btn btn-primary">スレッド詳細</a>
+                 {{-- routeの記述間違い{{ route('disp') }} --}}
+              <a href="" class="btn btn-primary">スレッド詳細</a>
             </div>
             <a  href="#" id="logout">ログアウト</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
+            <a href="{{ route('user.withdrawal') }}" onclick="res = confirm('本当に退会しますか？');
+            event.preventDefault();
+            if( res == true ) {
+              document.getElementById('withdrawal-form').submit();
+            }">
+              ・退会
+            </a>
+            <form id="withdrawal-form" action="{{ route('user.withdrawal') }}" method="post" style="display: none;">
+            @csrf
+            <form>
+
         </div>
     </main>
     <script src="../js/app.js">

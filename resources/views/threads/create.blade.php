@@ -14,7 +14,7 @@
                 @endforeach
               </div>
             @endif
-            <form action="{{ route('folders.create') }}" method="post">
+            <form action="{{ route('threads.create') }}" method="post">
               @csrf
               <div class="form-group">
                 <label for="title">スレッド名</label>

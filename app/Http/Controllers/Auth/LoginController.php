@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Http\Requests\CreateFolder; // ★ 追加
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -26,7 +28,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'index';
+    // protected $redirectTo = 'index';
+    protected $redirectTo = '/thread_all';
 
 
     /**
@@ -41,4 +44,24 @@ class LoginController extends Controller
     //     $this->middleware('guest')->except('logout');
 
     // }
+
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed',
+        ], [], [
+            'email' => 'メールアドレス',
+            'password' => 'パスワード',
+        ]);
+    }
+
+    protected function create(array $data)
+    {
+        return User::create([
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+    }
+
 }
