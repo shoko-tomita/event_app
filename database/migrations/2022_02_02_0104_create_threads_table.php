@@ -18,15 +18,17 @@ class CreateThreadsTable extends Migration
             $table->integer('office_id')->unsigned();
             $table->string('title');
             $table->string('thread_detail', 1000);
-            $table->integer('category_id')->unsigned();
-            $table->integer('delflag');
-            $table->dateTime('modified');
+            $table->integer('category_id')->default('1');
+            // $table->integer('category_id')->unsigned();
+            $table->integer('delflag')->default('1');
+            $table->dateTime('modified')->nullable();
+            $table->timestamps();
 
             // 外部キーを設定する
             $table->foreign('office_id')->references('id')->on('office');
 
             // 外部キーを設定する
-            $table->foreign('category_id')->references('id')->on('category');
+            // $table->foreign('category_id')->references('id')->on('category');
         });
     }
 

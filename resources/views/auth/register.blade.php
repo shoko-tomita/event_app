@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col col-md-offset-3 col-md-6">
         <nav class="panel panel-default">
-          <div class="panel-heading">一般ユーザー登録</div>
+          <div class="panel-heading">事業所登録</div>
           <div class="panel-body">
             @if($errors->any())
               <div class="alert alert-danger">
@@ -16,8 +16,16 @@
             <form action="{{ route('register') }}" method="POST">
               @csrf
               <div class="form-group">
-                <label for="name">お名前</label>
+                <label for="name">会社名</label>
                 <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" />
+              </div>
+              <div class="form-group">
+                <label for="address">住所</label>
+                <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}" />
+              </div>
+              <div class="form-group">
+                <label for="tel">電話番号</label>
+                <input type="text" class="form-control" id="tel" name="tel" value="{{ old('tel') }}" />
               </div>
               <div class="form-group">
                 <label for="email">メールアドレス</label>

@@ -11,11 +11,12 @@
 |
 */
 
-Route::get('/index','IndexController@indexcreate')->name('index.create');
-
 Route::get('/',function(){
     return view ('index');
 });
+
+Route::get('/index','IndexController@indexcreate')->name('index.create');
+
 
 Route::get('/thread_all',function(){
     return view ('thread_all');
@@ -27,33 +28,38 @@ Route::get('/office_register',function(){
 })->name('office_register');
 
 
+// グループがよくわからない
 Route::group(['prefix' => 'user'], function() {
 
+    // 自作の事業者登録
     Route::get('/signup',[
       'uses' => 'UserController@getSignup',
       'as' => 'user.signup'
     ]);
 
-    });
-
+    // 自作の事業者登録のポスト送信？
     Route::post('/signup',[
         'uses' => 'UserController@postSignup',
         'as' => 'user.signup'
         ]);
 
-        Route::get('/profile',[
-        'uses' => 'UserController@getProfile',
-        'as' => 'user.profile'
-        ]);
+    });
+
         // ユーザー退会処理のルーティング
         Route::post('/user', 'UsersController@withdrawal')->name('user.withdrawal');
 
-
         // スレッド作成のルーティング
-        Route::get('/create', 'ThreadController@showCreateForm')->name('thread.create');
+        Route::get('/create', 'ThreadController@showCreateForm')->name('threads.create');
 
         // スレッド詳細のルーティング
         Route::get('/disp', 'ThreadController@threadDisp')->name('thread.disp');
+
+
+
+        // フォルダを表示させるルーティング
+        // Route::get('/threads/create', 'ThreadController@showCreateForm')->name('threads.create');
+        // フォルダのバリデーションチェックのルーティング
+        // Route::post('/threads/create', 'ThreadController@create');
 
 
 Auth::routes();

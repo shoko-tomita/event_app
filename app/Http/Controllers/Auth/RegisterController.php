@@ -55,10 +55,14 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'tel' => ['required', 'string', 'max:12'],  // 電話番号
+            'address' => ['required', 'string', 'max:255'],  // 住所
         ], [], [
             'name' => 'ユーザー名',
             'email' => 'メールアドレス',
             'password' => 'パスワード',
+            'tel' => '電話番号',
+            'address' => '住所',
         ]);
     }
 
@@ -74,6 +78,8 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'tel' => $data['tel'],
+            'address' => $data['address'],
         ]);
     }
 }

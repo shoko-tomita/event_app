@@ -37,7 +37,9 @@
             </li>
           </ul>
           <img class="atumal" src="{{ asset("/iOS-の画像.jpg") }}" alt="あつまる">
-          <a href="" class="btn btn-primary">スレッド作成</a>
+
+          {{-- スレッド作成がうまく行かない・表示しない --}}
+          <a href="{{ route('threads.create') }}" class="btn btn-primary">スレッド作成</a>
 
     </header>
     <main>
@@ -68,6 +70,9 @@
                 </a>
               @endforeach --}}
                  {{-- routeの記述間違い{{ route('disp') }} --}}
+
+              {{-- ルーティングでの画面遷移がうまくいかない --}}
+              {{-- {{ route('threads.disp') }} --}}
               <a href="" class="btn btn-primary">スレッド詳細</a>
             </div>
             <a  href="#" id="logout">ログアウト</a>
@@ -88,10 +93,6 @@
         </div>
     </main>
     <script src="../js/app.js">
-    // document.getElementById('logout').addEventListener('click', function(event) {
-    //       event.preventDefault();
-    //       document.getElementById('logout-form').submit();
-    //     });
     </script>
 </body>
 

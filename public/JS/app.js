@@ -1,7 +1,7 @@
 'use strict';
 {
-    var cnt = 0
-    var loading = window.onload = function() {
+    let cnt = 0
+    let loading = window.onload = function() {
         cnt++;
         const timeoutId = setTimeout(loading, 1000);
         if(cnt > 4){

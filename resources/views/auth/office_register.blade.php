@@ -16,7 +16,7 @@
             <form action="{{ route('office') }}" method="POST">
               @csrf
               <div class="form-group">
-                <label for="name">お名前</label>
+                <label for="name">会社名</label>
                 <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" />
               </div>
               <div class="form-group">

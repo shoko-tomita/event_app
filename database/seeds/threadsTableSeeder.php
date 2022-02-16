@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
-class threadsTableSeeder extends Seeder
+class ThreadsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,16 +12,14 @@ class threadsTableSeeder extends Seeder
      */
     public function run()
     {
-        $titles = ['プライベート'];
-        $detail = ['テストテストテストテストテスト'];
 
-        foreach ($titles as $title) {
-            DB::table('folders')->insert([
-                'title' => $title,
-                'thread_detail' => $detail,
+            DB::table('threads')->insert([
+                'office_id' => "1",
+                'title' => "テスト",
+                'thread_detail' => "テストデータ",
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);
         }
     }
-}
+

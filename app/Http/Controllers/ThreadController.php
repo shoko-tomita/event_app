@@ -14,42 +14,24 @@ class ThreadController extends Controller
         return view('threads.create');
     }
 
-    public function threadDisp()
-    {
-        return view('threads.disp');
-    }
+    public function create(CreateThread $request)
+{
+    // フォルダモデルのインスタンスを作成する
+    $thread = new Thread();
+    // dd($request->title);
+    // exit;
 
+    // タイトルに入力値を代入する
+    $thread->title = $request->title;
+    $thread->thread_detail = $request->thread_detail;
 
-    public function index(int $id)
-    {
-    $threads = Thread::all();
+    Auth::user()->threads()->save($thread);
 
-    return view('thread_all', [
-        'threads' => $threads,
-        'current_thread_id' => $id,
+    // インスタンスの状態をデータベースに書き込む
+    $thread->save();
+
+    return redirect()->route('thread_all', [
+        'thread' => $thread->id,
     ]);
-    }
-
-    /**
-     * タスク作成
-     * @param Thread $thread
-     * @param CreateThread $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function create(Thread $thread, CreateThread $request)
-    {
-        $thread = new Thread();
-        $thread->title = $request->title;
-        $thread-> thread_detail	= $request->titlthread_detail	;
-        $thread->due_date = $request->due_date;
-
-        $thread->thread()->save($thread);
-
-        return redirect()->route('thread_all', [
-            // 'id' → 'folder'
-            'thread' => $thread->id,
-        // 変数があっているのかわからない
-        ]);
-    }
-
+}
 }
