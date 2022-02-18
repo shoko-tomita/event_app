@@ -1,5 +1,4 @@
-@extends('layout')
-
+<link rel="stylesheet" href="{{ asset("/css/style.css") }}">
 @section('content')
   <div class="container">
     <div class="row">
@@ -14,7 +13,7 @@
                 @endforeach
               </div>
             @endif
-            <form action="{{ route('folders.create') }}" method="post">
+            <form action="{{ route('threads.disp') }}" method="POST">
               @csrf
               <div class="form-group">
                 <label for="title">スレッド名</label>
@@ -25,12 +24,12 @@
                 <input type="position" class="form-control" name="position" id="position" value="{{ old('position') }}" />
               </div>
               <div class="text-right">
-                <button type="submit" class="btn btn-primary">お店のマイページ</button>
+                <button type="submit" class="btn btn-primary">お店のMypage</button>
               </div>
             </form>
           </div>
         </nav>
+
       </div>
     </div>
   </div>
-@endsection

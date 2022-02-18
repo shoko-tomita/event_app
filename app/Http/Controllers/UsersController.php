@@ -14,5 +14,5 @@ class UsersController extends Controller
         $user->delete();
         Auth::logout();
         return redirect(route('index.create'));
-}
+        }
 }

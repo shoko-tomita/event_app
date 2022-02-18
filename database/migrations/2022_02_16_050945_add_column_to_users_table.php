@@ -14,7 +14,7 @@ class AddColumnToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('tel',12);
+            $table->biginteger('tel');
             $table->string('address', 255);
         });
     }

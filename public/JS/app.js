@@ -1,5 +1,6 @@
 'use strict';
 {
+
     let cnt = 0
     let loading = window.onload = function() {
         cnt++;
