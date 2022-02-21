@@ -24,7 +24,7 @@
                 <input type="position" class="form-control" name="position" id="position" value="{{ old('position') }}" />
               </div>
               <div class="text-right">
-                <button type="submit" class="btn btn-primary">送信</button>
+                <button type="submit" class="btn btn-primary">投稿</button>
               </div>
             </form>
           </div>

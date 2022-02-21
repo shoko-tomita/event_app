@@ -52,14 +52,22 @@ Route::group(['prefix' => 'user'], function() {
         Route::get('/create', 'ThreadController@showCreateForm')->name('threads.create');
 
         // スレッド詳細のルーティング
-        Route::get('/disp', 'ThreadController@threadDisp')->name('thread.disp');
+        Route::get('/disp', 'ThreadController@threadDisp')->name('threads.disp');
 
 
+            // 各カテゴリーのルーティング
+            Route::get('/food', 'ThreadcategoryController@showFood')->name('category.food');
 
-        // フォルダを表示させるルーティング
-        // Route::get('/threads/create', 'ThreadController@showCreateForm')->name('threads.create');
-        // フォルダのバリデーションチェックのルーティング
-        // Route::post('/threads/create', 'ThreadController@create');
+            Route::get('/workshop', 'ThreadcategoryController@shoWorkshop')->name('category.workshop');
+
+            Route::get('/photo', 'ThreadcategoryController@showPhoto')->name('category.photo');
+
+            Route::get('/beauty', 'ThreadcategoryController@showBeauty')->name('category.beauty');
+
+            Route::get('/seminar', 'ThreadcategoryController@showSeminar')->name('category.seminar');
+
+            Route::get('/other', 'ThreadcategoryController@showOther')->name('category.other');
+
 
 
 Auth::routes();

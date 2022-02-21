@@ -12,61 +12,49 @@
 </head>
 
 <body>
+
+    <header id="header">
+        <h3>ATUMARU</h3>
+      </header>
+
+    <div class="openbtn1"><span></span><span></span><span></span></div>
+    <nav id="g-nav">
+    <div id="g-nav-list"><!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
+    <ul>
+        <li><a href="{{ route('category.food') }}">Food</a></li>
+        <li><a href="{{ route('category.workshop') }}">Workshop</a></li>
+        <li><a href="{{ route('category.photo') }}">Photo</a></li>
+        <li><a href="{{ route('category.beauty') }}">Beauty</a></li>
+        <li><a href="{{ route('category.seminar') }}">Seminar</a></li>
+        <li><a href="{{ route('category.other') }}">Other</a></li>
+    </ul>
+    </div>
+    </nav>
+    <div class="circle-bg"></div>
+
+{{--
     <header>
 
-        {{-- bootstrapのnavバーのレスポンシブが崩れる --}}
-        <nav class="navbar navbar-expand-xl navbar-light bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBasic" aria-controls="navbarBasic" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse show" id="navbarBasic">
-                <ul class="navbar-nav me-auto mb-2 mb-xl-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                  </li>
-                </ul>
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-              </div>
+        <nav>
+            <div class="drawer">
+             <h5 class="navbar_brand" href="#">ATUMARU</h5>
+             <div class="navbar_toggle">
+              <span class="navbar_toggle_icon"></span>
+              <span class="navbar_toggle_icon"></span>
+              <span class="navbar_toggle_icon"></span>
+             </div>
             </div>
-          </nav>
-
-
-
-        {{-- <div class="container"> --}}
-        {{-- <button type="button" class="btn btn-link"></button>
-
-         <ul class="nav navbar navbar-expand-md">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Foods</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Work shop</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Photo</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Beauty</a>
-              </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Seminar</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Other</a>
-            </li>
-          </ul> --}}
-
+            <div class="menu">
+             <ul>
+              <li><a href="#">Food</a></li>
+              <li><a href="#">Workshop</a></li>
+              <li><a href="#">Photo</a></li>
+              <li><a href="#">Beauty</a></li>
+              <li><a href="#">Seminar</a></li>
+              <li><a href="#">Other</a></li>
+             </ul>
+            </div>
+           </nav> --}}
 
           <img class="atumal" src="{{ asset("/iOS-の画像.jpg") }}" alt="あつまる">
 
@@ -95,27 +83,40 @@
                 </a>
               @endforeach --}}
 
+
               {{-- @foreach($therads as $thread)
                 <a href="{{ route('thread_all', ['id' => $thread->id]) }}" class="list-group-item">
                     {{ $thread->title }}
                 </a>
               @endforeach --}}
-                 {{-- routeの記述間違い{{ route('disp') }} --}}
 
-              {{-- ルーティングでの画面遷移がうまくいかない --}}
-              {{-- {{ route('threads.disp') }} --}}
-              <a href="" class="btn btn-primary">スレッド詳細</a>
+
+              {{-- <tbody>
+                @foreach($threads as $thread)
+                    <tr>
+                        <td>{{ $thread->title }}</td>
+                        <td>{{ $thread->thread_detail }}</td>
+                    </tr>
+                @endforeach
+            </tbody> --}}
+
+            {{-- <p>{{ $book->id }}</p>
+            <div class="book__texts">
+                <div class="book__title">{{ $book->title }}</div> --}}
+
+
+              <a href="{{ route('threads.disp') }}" class="btn btn-primary">スレッド詳細</a>
             </div>
             <a  href="#" id="logout">ログアウト</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
-            </form>
+            </form>・
             <a href="{{ route('user.withdrawal') }}" onclick="res = confirm('本当に退会しますか？');
             event.preventDefault();
             if( res == true ) {
               document.getElementById('withdrawal-form').submit();
             }">
-              ・退会
+              退会
             </a>
             <form id="withdrawal-form" action="{{ route('user.withdrawal') }}" method="post" style="display: none;">
             @csrf
@@ -123,6 +124,7 @@
 
         </div>
     </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="../js/app.js">
     </script>
 </body>

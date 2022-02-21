@@ -19,6 +19,38 @@ class ThreadController extends Controller
         return view('threads/disp');
     }
 
+
+    public function getThread() {
+
+        $threads = Thread::all();   // Eloquent"Member"で全データ取得
+        return view('thread_all', [
+            "threads" => $threads
+        ]);
+    }
+
+    // スレッド作成された時のバリデーションDBに値を保存、リダイレクト
+    public function postCreatethread(Request $request){
+        // バリデーション
+        $this->validate($request,[
+          'title' => 'required',
+          'thread_detail' => '',
+          'area' => 'required',
+        ]);
+
+        // DBインサート
+        $user = new Thread([
+          'title' => $request->input('title'),
+          'thread_detail' => $request->input('thread_detail'),
+          'area' => 'required',
+        ]);
+
+        // 保存
+        $user->save();
+
+        // リダイレクト
+        return redirect()->route('thread_all');
+      }
+
     // 引数にインポートしたRequestクラスを受け入れる
     public function create(CreateThread $request)
     {

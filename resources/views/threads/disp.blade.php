@@ -24,7 +24,7 @@
                 <input type="position" class="form-control" name="position" id="position" value="{{ old('position') }}" />
               </div>
               <div class="text-right">
-                <button type="submit" class="btn btn-primary">お店のMypage</button>
+                <button type="submit" class="btn btn-primary">お店のページ</button>
               </div>
             </form>
           </div>

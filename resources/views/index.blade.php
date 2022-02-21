@@ -12,11 +12,10 @@
     <link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-8/css/5-8.css"> --}}
 </head>
 
-<body><a href="https://vincentgarreau.com/particles.js/" target="_blank"></a>
+<body>
     <header>
         <div id="particles-js"></div>
         <div id="wrapper">
-        <button type="button" class="btn btn-link">Link</button>
         <img class="atumal" src="{{ asset("/iOS-の画像.jpg") }}" alt="あつまる">
     </header>
     <main>
@@ -27,21 +26,11 @@
 
         <a href="{{ route('thread_all') }}" class="link-primary">閲覧のみ</a>
 
-        {{-- <a  href="#" id="logout">・ログアウト</a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-              @csrf
-            </form> --}}
 
     </main>
-</div>
-    {{-- <script>
-        document.getElementById('logout').addEventListener('click', function(event) {
-          event.preventDefault();
-          document.getElementById('logout-form').submit();
-        });
-      </script> --}}
-      <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-      <script src="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-8/js/5-8.js">
+    </div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-8/js/5-8.js">
 
     particlesJS("particles-js",{
         "particles":{
