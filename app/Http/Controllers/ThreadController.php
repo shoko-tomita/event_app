@@ -28,6 +28,17 @@ class ThreadController extends Controller
         ]);
     }
 
+      /**
+     * 指定ユーザーのプロフィール表示
+     *
+     * @param  int  $id
+     * @return View
+     */
+    public function show($id)
+    {
+        return view('threads.disp', ['thread' => Thread::findOrFail($id)]);
+    }
+
     // スレッド作成された時のバリデーションDBに値を保存、リダイレクト
     public function postCreatethread(Request $request){
         // バリデーション

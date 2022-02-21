@@ -18,9 +18,13 @@ Route::get('/',function(){
 Route::get('/index','IndexController@indexcreate')->name('index.create');
 
 
-Route::get('/thread_all',function(){
-    return view ('thread_all');
- })->name('thread_all');
+// Route::get('/thread_all',function(){
+//     return view ('thread_all');
+//  })->name('thread_all');
+
+Route::get('/thread_all', 'ThreadController@getThread');
+
+Route::get('thread/{id}', 'ThreadController@show');
 
 
 Route::get('/office_register',function(){

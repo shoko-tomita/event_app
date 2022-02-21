@@ -15,6 +15,7 @@
             @endif
             <form action="{{ route('threads.disp') }}" method="POST">
               @csrf
+              {{ $thread->title }}
               <div class="form-group">
                 <label for="title">スレッド名</label>
                 <input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}" />

@@ -7,6 +7,9 @@ use Carbon\Carbon;
 
 class Thread extends Model
 {
+    protected $fillable = [
+        'modified'
+    ];
     public function threads()
     {
         //

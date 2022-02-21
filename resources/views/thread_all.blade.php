@@ -76,6 +76,10 @@
               <h5 class="card-title">◯◯のイベント</h5>
               <p class="card-text">スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容</p>
 
+              @foreach ($threads as $thread)
+                <p>これは {{ $thread->id }} ユーザーです。</p>
+             @endforeach
+
                 {{-- todoのフォルダの追加？Chapter3から
               @foreach($folders as $folder)
                 <a href="{{ route('tasks.index', ['id' => $folder->id]) }}" class="list-group-item">

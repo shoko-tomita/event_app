@@ -17,8 +17,9 @@ class ThreadsTableSeeder extends Seeder
                 'office_id' => "1",
                 'title' => "テスト",
                 'thread_detail' => "テストデータ",
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
+                'category_id' => "1",
+                'delflag' => "1",
+
             ]);
         }
     }
