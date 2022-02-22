@@ -32,29 +32,6 @@
     </nav>
     <div class="circle-bg"></div>
 
-{{--
-    <header>
-
-        <nav>
-            <div class="drawer">
-             <h5 class="navbar_brand" href="#">ATUMARU</h5>
-             <div class="navbar_toggle">
-              <span class="navbar_toggle_icon"></span>
-              <span class="navbar_toggle_icon"></span>
-              <span class="navbar_toggle_icon"></span>
-             </div>
-            </div>
-            <div class="menu">
-             <ul>
-              <li><a href="#">Food</a></li>
-              <li><a href="#">Workshop</a></li>
-              <li><a href="#">Photo</a></li>
-              <li><a href="#">Beauty</a></li>
-              <li><a href="#">Seminar</a></li>
-              <li><a href="#">Other</a></li>
-             </ul>
-            </div>
-           </nav> --}}
 
           <img class="atumal" src="{{ asset("/iOS-の画像.jpg") }}" alt="あつまる">
 
@@ -67,49 +44,30 @@
         </div>
 
           <img src="{{ asset("/img/new017/new017_10.gif") }}" alt="新着スレッド">
+
         <!-- スレッド作成の内容が本来表示 -->
 
+        @foreach ($threads as $thread)
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"> {{ $thread->title }}</h5>
+              <p class="card-text">{{ $thread->thread_detail }}</p>
+              <a href="{{ route('threads.disp') }}" class="btn btn-primary">スレッド詳細</a>
+            </div>
+          </div>
+          @endforeach
+
+        {{-- @foreach ($threads as $thread)
         <div class="card">
             <div class="card-header">
             </div>
             <div class="card-body">
-              <h5 class="card-title">◯◯のイベント</h5>
-              <p class="card-text">スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容スレッド内容</p>
-
-              @foreach ($threads as $thread)
-                <p>これは {{ $thread->id }} ユーザーです。</p>
-             @endforeach
-
-                {{-- todoのフォルダの追加？Chapter3から
-              @foreach($folders as $folder)
-                <a href="{{ route('tasks.index', ['id' => $folder->id]) }}" class="list-group-item">
-                    {{ $folder->title }}
-                </a>
-              @endforeach --}}
-
-
-              {{-- @foreach($therads as $thread)
-                <a href="{{ route('thread_all', ['id' => $thread->id]) }}" class="list-group-item">
-                    {{ $thread->title }}
-                </a>
-              @endforeach --}}
-
-
-              {{-- <tbody>
-                @foreach($threads as $thread)
-                    <tr>
-                        <td>{{ $thread->title }}</td>
-                        <td>{{ $thread->thread_detail }}</td>
-                    </tr>
-                @endforeach
-            </tbody> --}}
-
-            {{-- <p>{{ $book->id }}</p>
-            <div class="book__texts">
-                <div class="book__title">{{ $book->title }}</div> --}}
-
-
+              <h5 class="card-title"> {{ $thread->title }} </h5>
+              <p class="card-text">{{ $thread->thread_detail }}</p>
               <a href="{{ route('threads.disp') }}" class="btn btn-primary">スレッド詳細</a>
+            @endforeach --}}
+
+
             </div>
             <a  href="#" id="logout">ログアウト</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

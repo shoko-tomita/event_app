@@ -14,15 +14,16 @@ class ThreadController extends Controller
         return view('threads/create');
     }
 
-    public function threadDisp()
-    {
-        return view('threads/disp');
-    }
+    // public function threadDisp()
+    // {
+    //     return view('threads/disp');
+    // }
 
 
     public function getThread() {
 
-        $threads = Thread::all();   // Eloquent"Member"で全データ取得
+        $threads = Thread::all();
+        // Eloquent"Member"で全データ取得
         return view('thread_all', [
             "threads" => $threads
         ]);
@@ -34,13 +35,18 @@ class ThreadController extends Controller
      * @param  int  $id
      * @return View
      */
-    public function show($id)
-    {
-        return view('threads.disp', ['thread' => Thread::findOrFail($id)]);
-    }
+    // public function show($id)
+    // {
+    //      return view('threads.disp', ['thread' => Thread::findOrFail($id)]);}
+
+        // public function show()
+        // {
+        //     return view('threads.disp');
+        // }
+
 
     // スレッド作成された時のバリデーションDBに値を保存、リダイレクト
-    public function postCreatethread(Request $request){
+    public function create(CreateThread $request){
         // バリデーション
         $this->validate($request,[
           'title' => 'required',
@@ -62,26 +68,4 @@ class ThreadController extends Controller
         return redirect()->route('thread_all');
       }
 
-    // 引数にインポートしたRequestクラスを受け入れる
-    public function create(CreateThread $request)
-    {
-    // フォルダモデルのインスタンスを作成する
-    $thread = new Thread();
-    // dd($request->title);
-    // exit;
-
-    // タイトルに入力値を代入する
-    $thread->title = $request->title;
-    $thread->thread_detail;
-    $request->thread_detail;
-
-    Auth::user()->threads()->save($thread);
-
-    // インスタンスの状態をデータベースに書き込む
-    $thread->save();
-
-    return redirect()->route('thread_all', [
-        'thread' => $thread->id,
-    ]);
-    }
-}
+   }

@@ -22,9 +22,15 @@ Route::get('/index','IndexController@indexcreate')->name('index.create');
 //     return view ('thread_all');
 //  })->name('thread_all');
 
-Route::get('/thread_all', 'ThreadController@getThread');
+Route::get('/thread_all', 'ThreadController@getThread')->name('thread_all');
 
-Route::get('thread/{id}', 'ThreadController@show');
+  // スレッド詳細のルーティング
+        // Route::get('/disp','ThreadController@show')->name('threads.disp');
+
+        // Route::get('/folders/{folder}/tasks', 'TaskController@index')->name('tasks.index');
+
+
+ Route::get('/disp', 'ThreadController@show')->name('threads.disp');
 
 
 Route::get('/office_register',function(){
@@ -54,9 +60,7 @@ Route::group(['prefix' => 'user'], function() {
 
         // スレッド作成のルーティング
         Route::get('/create', 'ThreadController@showCreateForm')->name('threads.create');
-
-        // スレッド詳細のルーティング
-        Route::get('/disp', 'ThreadController@threadDisp')->name('threads.disp');
+        Route::post('/create', 'ThreadController@create');
 
 
             // 各カテゴリーのルーティング
