@@ -24,13 +24,15 @@ Route::get('/index','IndexController@indexcreate')->name('index.create');
 
 Route::get('/thread_all', 'ThreadController@getThread')->name('thread_all');
 
+// Route::get('threads/{id}', 'ThreadController@getshow');
+
   // スレッド詳細のルーティング
         // Route::get('/disp','ThreadController@show')->name('threads.disp');
 
         // Route::get('/folders/{folder}/tasks', 'TaskController@index')->name('tasks.index');
 
 
- Route::get('/disp', 'ThreadController@show')->name('threads.disp');
+  Route::get('/disp', 'ThreadController@show')->name('threads.disp');
 
 
 Route::get('/office_register',function(){

@@ -8,14 +8,16 @@
           <div class="panel-body">
             @if($errors->any())
               <div class="alert alert-danger">
-                @foreach($errors->all() as $message)
+                {{-- @foreach($errors->all() as $message)
                   <p>{{ $message }}</p>
-                @endforeach
+                @endforeach --}}
               </div>
             @endif
             <form action="{{ route('threads.disp') }}" method="POST">
               @csrf
-
+              @foreach($threads as $thread)
+              <p>{{ $thread->thread_detail }}</p>
+                @endforeach
               <div class="form-group">
                 <label for="title">{{ $thread->title }}</label>
                 <input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}" />

@@ -35,9 +35,9 @@ class ThreadController extends Controller
      * @param  int  $id
      * @return View
      */
-    // public function show($id)
-    // {
-    //      return view('threads.disp', ['thread' => Thread::findOrFail($id)]);}
+    public function show($id)
+    {
+         return view('threads/disp', ['threads' => Thread::findOrFail($id)]);}
 
         // public function show()
         // {

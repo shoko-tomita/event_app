@@ -26,6 +26,8 @@
 
         <a href="{{ route('thread_all') }}" class="link-primary">閲覧のみ</a>
 
+    <h4>"あつまる"は誰でも気軽に閲覧できるイベント発信アプリです！</h4>
+
 
     </main>
     </div>
