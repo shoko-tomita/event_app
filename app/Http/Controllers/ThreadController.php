@@ -29,14 +29,26 @@ class ThreadController extends Controller
         ]);
     }
 
-
-        public function show()
-        {
-            $threads = Thread::all();
-            return view('threads.disp',[
-                "threads" => $threads
-            ]);
-        }
+/**
+     * 指定ユーザーのプロフィール表示
+     *
+     * @param  int  $id
+     * @return View
+     */
+    public function show($id)
+    {
+        // $a=Thread::find($id);
+        // dd($a->title);
+        // dd(Thread::findOrFail($id));
+         return view('threads.disp', ['thread' => Thread::findOrFail($id)]);
+    }
+        // public function show()
+        // {
+        //     $threads = Thread::all();
+        //     return view('threads.disp',[
+        //         "threads" => $threads
+        //     ]);
+        // }
 
         // public function show(int $id)
         // {

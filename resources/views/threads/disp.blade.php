@@ -13,16 +13,16 @@
                 @endforeach
               </div>
             @endif
-            
-            @foreach ($threads as $thread)
-            <form action="{{ route('threads.disp',['id' => $thread->id]) }}" method="POST">
+
+
+
               @csrf
 
               <div class="card">
                   <div class="card-body">
                     <h5 class="card-title"> {{ $thread->title }}</h5>
                     <p class="card-text">{{ $thread->thread_detail }}</p>
-                    @endforeach
+             
 
                   </div>
                 </div>
@@ -32,7 +32,7 @@
                 {{-- <input type="position" class="form-control" name="position" id="position" value="{{ old('position') }}" />
               </div> --}}
               <a href="" class="btn btn-primary">お店の詳細</a>
-            </form>
+
           </div>
         </nav>
 
