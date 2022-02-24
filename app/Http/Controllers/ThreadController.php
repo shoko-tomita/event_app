@@ -11,7 +11,7 @@ class ThreadController extends Controller
 
     public function showCreateForm()
     {
-        return view('threads/create');
+        return view('threads.create');
     }
 
     // public function threadDisp()
@@ -29,21 +29,24 @@ class ThreadController extends Controller
         ]);
     }
 
-      /**
-     * 指定ユーザーのプロフィール表示
-     *
-     * @param  int  $id
-     * @return View
-     */
-    public function show($id)
-    {
-         return view('threads/disp', ['threads' => Thread::findOrFail($id)]);}
 
-        // public function show()
+        public function show()
+        {
+            $threads = Thread::all();
+            return view('threads.disp',[
+                "threads" => $threads
+            ]);
+        }
+
+        // public function show(int $id)
         // {
-        //     return view('threads.disp');
-        // }
+        //     $threads = Thread::all();
 
+        //     return view('threads.disp', [
+        //         'threads' => $threads,
+        //         'user_id' => $id,
+        //     ]);
+        // }
 
     // スレッド作成された時のバリデーションDBに値を保存、リダイレクト
     public function create(CreateThread $request){

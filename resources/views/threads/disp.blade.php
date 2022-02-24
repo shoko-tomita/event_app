@@ -8,28 +8,30 @@
           <div class="panel-body">
             @if($errors->any())
               <div class="alert alert-danger">
-                {{-- @foreach($errors->all() as $message)
+                @foreach($errors->all() as $message)
                   <p>{{ $message }}</p>
-                @endforeach --}}
+                @endforeach
               </div>
             @endif
-            <form action="{{ route('threads.disp') }}" method="POST">
+            
+            @foreach ($threads as $thread)
+            <form action="{{ route('threads.disp',['id' => $thread->id]) }}" method="POST">
               @csrf
-              @foreach($threads as $thread)
-              <p>{{ $thread->thread_detail }}</p>
-                @endforeach
-              <div class="form-group">
-                <label for="title">{{ $thread->title }}</label>
-                <input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}" />
-                <label for="title">{{ $thread->thread_detail }}</label>
-                <input type="text" class="form-control" name="text" id="text" value="{{ old('text') }}" />
+
+              <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title"> {{ $thread->title }}</h5>
+                    <p class="card-text">{{ $thread->thread_detail }}</p>
+                    @endforeach
+
+                  </div>
+                </div>
+
                 {{-- 位置情報はDBにareaカラムが無いから手入力で入れたものを反映させる --}}
                 <label for="title">位置情報</label>
-                <input type="position" class="form-control" name="position" id="position" value="{{ old('position') }}" />
-              </div>
-              <div class="text-right">
-                <button type="submit" class="btn btn-primary">お店のページ</button>
-              </div>
+                {{-- <input type="position" class="form-control" name="position" id="position" value="{{ old('position') }}" />
+              </div> --}}
+              <a href="" class="btn btn-primary">お店の詳細</a>
             </form>
           </div>
         </nav>

@@ -26,13 +26,13 @@ Route::get('/thread_all', 'ThreadController@getThread')->name('thread_all');
 
 // Route::get('threads/{id}', 'ThreadController@getshow');
 
-  // スレッド詳細のルーティング
-        // Route::get('/disp','ThreadController@show')->name('threads.disp');
+ // スレッド詳細のルーティング
+        Route::get('/disp','ThreadController@show')->name('threads.disp');
 
         // Route::get('/folders/{folder}/tasks', 'TaskController@index')->name('tasks.index');
 
 
-  Route::get('/disp', 'ThreadController@show')->name('threads.disp');
+//   Route::get('/office', 'MypageOfficeController@mypage_office')->name('mypage.office')
 
 
 Route::get('/office_register',function(){
@@ -59,6 +59,8 @@ Route::group(['prefix' => 'user'], function() {
 
         // ユーザー退会処理のルーティング
         Route::post('/user', 'UsersController@withdrawal')->name('user.withdrawal');
+
+
 
         // スレッド作成のルーティング
         Route::get('/create', 'ThreadController@showCreateForm')->name('threads.create');

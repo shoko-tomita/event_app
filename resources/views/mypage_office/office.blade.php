@@ -13,7 +13,7 @@
                 @endforeach
               </div>
             @endif
-            <form action="{{ route('mypage_office.office_edit') }}" method="POST">
+            <form action="{{ route('mypage.office') }}" method="POST">
               @csrf
             <div class="input-group input-group-sm">
                 <span class="input-group-text" id="input-group-sm-example">name</span>
@@ -43,7 +43,7 @@
                 <span class="input-group-text" id="input-group-sm-example">password</span>
                 <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
             </div>
-            <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off">編集</button>
+            <a href="" class="btn btn-primary">スレッド編集</a>
               </div>
             </form>
           </div>

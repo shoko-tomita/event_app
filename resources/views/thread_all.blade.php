@@ -52,20 +52,11 @@
             <div class="card-body">
               <h5 class="card-title"> {{ $thread->title }}</h5>
               <p class="card-text">{{ $thread->thread_detail }}</p>
+
               <a href="{{ route('threads.disp') }}" class="btn btn-primary">スレッド詳細</a>
             </div>
           </div>
           @endforeach
-
-        {{-- @foreach ($threads as $thread)
-        <div class="card">
-            <div class="card-header">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title"> {{ $thread->title }} </h5>
-              <p class="card-text">{{ $thread->thread_detail }}</p>
-              <a href="{{ route('threads.disp') }}" class="btn btn-primary">スレッド詳細</a>
-            @endforeach --}}
 
 
             </div>
