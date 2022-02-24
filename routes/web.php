@@ -15,6 +15,10 @@ Route::get('/',function(){
     return view ('index');
 });
 
+Route::get('/office_register',function(){
+    return view ('office_register');
+})->name('office_register');
+
 Route::get('/index','IndexController@indexcreate')->name('index.create');
 
 
@@ -24,21 +28,15 @@ Route::get('/index','IndexController@indexcreate')->name('index.create');
 
 Route::get('/thread_all', 'ThreadController@getThread')->name('thread_all');
 
-// Route::get('threads/{id}', 'ThreadController@getshow');
+// Route::get('disp/{id}', 'ThreadController@show');
 
  // スレッド詳細のルーティング
-        Route::get('/disp','ThreadController@show')->name('threads.disp');
+Route::get('/disp/{id}','ThreadController@show')->name('threads.disp');
 
-        // Route::get('/folders/{folder}/tasks', 'TaskController@index')->name('tasks.index');
-
-
-//   Route::get('/office', 'MypageOfficeController@mypage_office')->name('mypage.office')
+Route::get('/office/{id}','MypageOfficeController@mypageOffice')->name('mypage.office');
 
 
-Route::get('/office_register',function(){
-    return view ('office_register');
-})->name('office_register');
-
+//  Route::get('/office_edit/{id}','MypageOfficeController@officeEdit')->name('office.edit');
 
 // グループがよくわからない
 Route::group(['prefix' => 'user'], function() {
@@ -59,7 +57,6 @@ Route::group(['prefix' => 'user'], function() {
 
         // ユーザー退会処理のルーティング
         Route::post('/user', 'UsersController@withdrawal')->name('user.withdrawal');
-
 
 
         // スレッド作成のルーティング

@@ -20,7 +20,7 @@
                 <input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}" />
                 <label for="title">スレッド内容</label>
                 <input type="text" class="form-control" name="text" id="text" value="{{ old('text') }}" />
-                <label for="title">位置情報</label>
+                <label for="position">位置情報</label>
                 <input type="position" class="form-control" name="position" id="position" value="{{ old('position') }}" />
               </div>
               <div class="text-right">

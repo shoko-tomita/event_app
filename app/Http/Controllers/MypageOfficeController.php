@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class MypageOfficeController extends Controller
 {
-    // public function mypage_office()
-    // {
-    //     return view('mypage.office');
-    // }
+    public function mypageOffice($id)
+    {
+        return view('mypage_office/office', ['user' => User::findOrFail($id)]);
+    }
+
+
 }

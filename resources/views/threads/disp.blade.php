@@ -13,17 +13,13 @@
                 @endforeach
               </div>
             @endif
-            
-            @foreach ($threads as $thread)
-            <form action="{{ route('threads.disp',['id' => $thread->id]) }}" method="POST">
+
               @csrf
 
               <div class="card">
                   <div class="card-body">
                     <h5 class="card-title"> {{ $thread->title }}</h5>
                     <p class="card-text">{{ $thread->thread_detail }}</p>
-                    @endforeach
-
                   </div>
                 </div>
 
@@ -31,8 +27,9 @@
                 <label for="title">位置情報</label>
                 {{-- <input type="position" class="form-control" name="position" id="position" value="{{ old('position') }}" />
               </div> --}}
-              <a href="" class="btn btn-primary">お店の詳細</a>
-            </form>
+
+              <a href="{{ route('mypage.office',['id' => $thread->user_id]) }}" class="btn btn-primary">お店の詳細</a>
+
           </div>
         </nav>
 

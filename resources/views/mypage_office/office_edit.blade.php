@@ -13,7 +13,7 @@
                 @endforeach
               </div>
             @endif
-            <form action="{{ route('mypage_office.office_edit') }}" method="POST">
+            {{-- <form action="{{ route('office.edit') }}" method="POST"> --}}
               @csrf
             <div class="input-group input-group-sm">
                 <span class="input-group-text" id="input-group-sm-example">name</span>

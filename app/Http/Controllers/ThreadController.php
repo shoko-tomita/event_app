@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateThread;
 use Illuminate\Http\Request;
 use App\Thread;
+use Illuminate\Support\Facades\Auth;
+
 
 class ThreadController extends Controller
 {
@@ -29,24 +31,17 @@ class ThreadController extends Controller
         ]);
     }
 
+/**
+     * 指定ユーザーのプロフィール表示
+     *
+     * @param  int  $id
+     * @return View
+     */
+    public function show($id)
+    {
+         return view('threads.disp', ['thread' => Thread::findOrFail($id)]);
+    }
 
-        public function show()
-        {
-            $threads = Thread::all();
-            return view('threads.disp',[
-                "threads" => $threads
-            ]);
-        }
-
-        // public function show(int $id)
-        // {
-        //     $threads = Thread::all();
-
-        //     return view('threads.disp', [
-        //         'threads' => $threads,
-        //         'user_id' => $id,
-        //     ]);
-        // }
 
     // スレッド作成された時のバリデーションDBに値を保存、リダイレクト
     public function create(CreateThread $request){
@@ -54,15 +49,16 @@ class ThreadController extends Controller
         $this->validate($request,[
           'title' => 'required',
           'thread_detail' => '',
-          'area' => 'required',
+
         ]);
 
         // DBインサート
-        $user = new Thread([
-          'title' => $request->input('title'),
-          'thread_detail' => $request->input('thread_detail'),
-          'area' => 'required',
-        ]);
+        $user = new Thread();
+
+        $user->user_id = Auth::id();
+        $user->title = $request->input('title');
+        $user->thread_detail = $request->input('text');
+        $user->category_id = 1;
 
         // 保存
         $user->save();

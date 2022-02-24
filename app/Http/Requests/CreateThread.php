@@ -24,7 +24,15 @@ class CreateThread extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required', // ★
+            'title' => 'required|max:20',
+            'text' => 'required',
         ];
+    }
+    public function attributes()
+    {
+    return [
+        'title' => 'スレッド名',
+        'text' => 'スレッド内容',
+    ];
     }
 }

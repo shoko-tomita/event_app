@@ -15,7 +15,7 @@ class CreateThreadsTable extends Migration
     {
         Schema::create('threads', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('office_id')->unsigned();
+            $table->biginteger('user_id')->unsigned();
             $table->string('title');
             $table->string('thread_detail', 1000);
             $table->integer('category_id')->default('1');
@@ -25,7 +25,7 @@ class CreateThreadsTable extends Migration
             $table->timestamps();
 
             // 外部キーを設定する
-            $table->foreign('office_id')->references('id')->on('office');
+            $table->foreign('user_id')->references('id')->on('users');
 
             // 外部キーを設定する
             // $table->foreign('category_id')->references('id')->on('category');

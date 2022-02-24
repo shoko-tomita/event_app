@@ -14,7 +14,7 @@ class ThreadsTableSeeder extends Seeder
     {
 
             DB::table('threads')->insert([
-                'office_id' => "1",
+                'user_id' => "1",
                 'title' => "テスト",
                 'thread_detail' => "テストデータ",
                 'category_id' => "1",

@@ -48,15 +48,37 @@
         <!-- スレッド作成の内容が本来表示 -->
 
         @foreach ($threads as $thread)
+        <div class="col col-md-offset-3 col-md-6">
+        <nav class="panel panel-default">
+            <div class="panel-heading"> {{ $thread->title }}</div>
+            <div class="panel-body">
+                <div class="card">
+                    <div class="card-body">
+                      {{-- <h5 class="card-title"> {{ $thread->thread_detail }}</h5> --}}
+                      <p class="card-text">{{ $thread->thread_detail }}</p>
+                    </div>
+                  </div>
+
+                  {{-- 位置情報はDBにareaカラムが無いから手入力で入れたものを反映させる --}}
+                  <label for="title">位置情報</label>
+                  {{-- <input type="position" class="form-control" name="position" id="position" value="{{ old('position') }}" />
+                </div> --}}
+
+                <a href="{{ route('threads.disp',['id' => $thread->id]) }}" class="btn btn-primary">スレッド詳細</a>
+
+                </div>
+            </nav>
+        </div>
+          @endforeach
+{{--
         <div class="card">
             <div class="card-body">
               <h5 class="card-title"> {{ $thread->title }}</h5>
               <p class="card-text">{{ $thread->thread_detail }}</p>
-
-              <a href="{{ route('threads.disp') }}" class="btn btn-primary">スレッド詳細</a>
             </div>
+            <a href="{{ route('threads.disp',['id' => $thread->id]) }}" class="btn btn-primary">スレッド詳細</a>
           </div>
-          @endforeach
+          @endforeach --}}
 
 
             </div>
