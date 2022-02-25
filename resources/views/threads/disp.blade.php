@@ -14,22 +14,14 @@
               </div>
             @endif
 
-<<<<<<< HEAD
-=======
 
-
->>>>>>> f9fe75ec796fe78894c525a02bac11a2c631b0dc
               @csrf
 
               <div class="card">
                   <div class="card-body">
                     <h5 class="card-title"> {{ $thread->title }}</h5>
                     <p class="card-text">{{ $thread->thread_detail }}</p>
-<<<<<<< HEAD
-=======
-             
 
->>>>>>> f9fe75ec796fe78894c525a02bac11a2c631b0dc
                   </div>
                 </div>
 
@@ -37,12 +29,12 @@
                 <label for="title">位置情報</label>
                 {{-- <input type="position" class="form-control" name="position" id="position" value="{{ old('position') }}" />
               </div> --}}
-<<<<<<< HEAD
+
 
               <a href="{{ route('mypage.office',['id' => $thread->user_id]) }}" class="btn btn-primary">お店の詳細</a>
-=======
-              <a href="" class="btn btn-primary">お店の詳細</a>
->>>>>>> f9fe75ec796fe78894c525a02bac11a2c631b0dc
+
+
+
 
           </div>
         </nav>
