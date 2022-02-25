@@ -39,9 +39,34 @@ class ThreadController extends Controller
      */
     public function show($id)
     {
+<<<<<<< HEAD
          return view('threads.disp', ['thread' => Thread::findOrFail($id)]);
     }
 
+=======
+        // $a=Thread::find($id);
+        // dd($a->title);
+        // dd(Thread::findOrFail($id));
+         return view('threads.disp', ['thread' => Thread::findOrFail($id)]);
+    }
+        // public function show()
+        // {
+        //     $threads = Thread::all();
+        //     return view('threads.disp',[
+        //         "threads" => $threads
+        //     ]);
+        // }
+
+        // public function show(int $id)
+        // {
+        //     $threads = Thread::all();
+
+        //     return view('threads.disp', [
+        //         'threads' => $threads,
+        //         'user_id' => $id,
+        //     ]);
+        // }
+>>>>>>> f9fe75ec796fe78894c525a02bac11a2c631b0dc
 
     // スレッド作成された時のバリデーションDBに値を保存、リダイレクト
     public function create(CreateThread $request){

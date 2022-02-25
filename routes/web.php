@@ -31,7 +31,11 @@ Route::get('/thread_all', 'ThreadController@getThread')->name('thread_all');
 // Route::get('disp/{id}', 'ThreadController@show');
 
  // スレッド詳細のルーティング
+<<<<<<< HEAD
 Route::get('/disp/{id}','ThreadController@show')->name('threads.disp');
+=======
+        Route::get('/disp/{id}','ThreadController@show')->name('threads.disp');
+>>>>>>> f9fe75ec796fe78894c525a02bac11a2c631b0dc
 
 Route::get('/office/{id}','MypageOfficeController@mypageOffice')->name('mypage.office');
 
