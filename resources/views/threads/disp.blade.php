@@ -29,8 +29,11 @@
                 {{-- <input type="position" class="form-control" name="position" id="position" value="{{ old('position') }}" />
               </div> --}}
 
-{{-- {{ route('mypage.office',['id' => $thread->user_id]) }} --}}
+              {{-- {{ route('mypage.office',['id' => $thread->user_id]) }} --}}
               <a href="" class="btn btn-primary">お店の詳細</a>
+
+
+>>>>>>> cf34bf8eac9172daa93ba865bdf8ac2d51bec5bf
 
 
           </div>
