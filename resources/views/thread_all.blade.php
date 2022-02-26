@@ -75,11 +75,8 @@
             <div class="card-body">
               <h5 class="card-title"> {{ $thread->title }}</h5>
               <p class="card-text">{{ $thread->thread_detail }}</p>
-<<<<<<< HEAD
-=======
 
               <a href="{{ route('threads.disp',['id' => $thread->id]) }}" class="btn btn-primary">スレッド詳細</a>
->>>>>>> f9fe75ec796fe78894c525a02bac11a2c631b0dc
             </div>
             <a href="{{ route('threads.disp',['id' => $thread->id]) }}" class="btn btn-primary">スレッド詳細</a>
           </div>
