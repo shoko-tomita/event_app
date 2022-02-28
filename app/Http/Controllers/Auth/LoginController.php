@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Http\Requests\CreateFolder; // ★ 追加
 use Illuminate\Http\Request;
 
+
 class LoginController extends Controller
 {
     /*
@@ -28,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    // protected $redirectTo = 'index';
+    //  protected $redirectTo = 'index';
     protected $redirectTo = '/thread_all';
 
 

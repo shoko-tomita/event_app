@@ -106,6 +106,12 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="../js/app.js">
     </script>
+    <script>
+        document.getElementById('logout').addEventListener('click', function(event) {
+          event.preventDefault();
+          document.getElementById('logout-form').submit();
+        });
+      </script>
 </body>
 
 </html>

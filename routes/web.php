@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('index');
 });
 
+
+
 Route::get('/office_register', function () {
     return view('office_register');
 })->name('office_register');
@@ -31,13 +33,13 @@ Route::get('/thread_all', 'ThreadController@getThread')->name('thread_all');
 // Route::get('disp/{id}', 'ThreadController@show');
 
 // スレッド詳細のルーティング
-
 Route::get('/disp/{id}', 'ThreadController@show')->name('threads.disp');
 
 Route::get('/office/{id}', 'MypageOfficeController@mypageOffice')->name('mypage.office');
 
+// スレッド編集のルーティング
+// Route::get('/edit/{id}', 'MypageOfficeController@OfficeEdit')->name('office.edit');
 
-//  Route::get('/office_edit/{id}','MypageOfficeController@officeEdit')->name('office.edit');
 
 // グループがよくわからない
 Route::group(['prefix' => 'user'], function () {
