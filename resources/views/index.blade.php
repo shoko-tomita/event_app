@@ -19,7 +19,7 @@
         <img class="atumal" src="{{ asset("/iOS-の画像.jpg") }}" alt="あつまる">
     </header>
     <main>
-        <a class="btn btn-primary" href="{{ route('register') }}" role="button" method="post">事業登録</a>
+        <a class="btn btn-primary" href='/register'  role="" method="">事業登録</a>
 
         <a class="btn btn-primary" href="{{ route('user.signup') }}" role="button" method="post">一般登録</a>
         <a class="btn btn-primary" href="{{ route('login') }}" role="button" method="POST">登録済</a>

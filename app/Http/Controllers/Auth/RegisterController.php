@@ -82,4 +82,6 @@ class RegisterController extends Controller
             'address' => $data['address'],
         ]);
     }
+
+    
 }

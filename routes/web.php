@@ -11,15 +11,15 @@
 |
 */
 
-Route::get('/',function(){
-    return view ('index');
+Route::get('/', function () {
+    return view('index');
 });
 
-Route::get('/office_register',function(){
-    return view ('office_register');
+Route::get('/office_register', function () {
+    return view('office_register');
 })->name('office_register');
 
-Route::get('/index','IndexController@indexcreate')->name('index.create');
+Route::get('/index', 'IndexController@indexcreate')->name('index.create');
 
 
 // Route::get('/thread_all',function(){
@@ -30,53 +30,53 @@ Route::get('/thread_all', 'ThreadController@getThread')->name('thread_all');
 
 // Route::get('disp/{id}', 'ThreadController@show');
 
- // スレッド詳細のルーティング
+// スレッド詳細のルーティング
 
-Route::get('/disp/{id}','ThreadController@show')->name('threads.disp');
+Route::get('/disp/{id}', 'ThreadController@show')->name('threads.disp');
 
-Route::get('/office/{id}','MypageOfficeController@mypageOffice')->name('mypage.office');
+Route::get('/office/{id}', 'MypageOfficeController@mypageOffice')->name('mypage.office');
 
 
 //  Route::get('/office_edit/{id}','MypageOfficeController@officeEdit')->name('office.edit');
 
 // グループがよくわからない
-Route::group(['prefix' => 'user'], function() {
+Route::group(['prefix' => 'user'], function () {
 
     // 自作の事業者登録
-    Route::get('/signup',[
-      'uses' => 'UserController@getSignup',
-      'as' => 'user.signup'
+    Route::get('/signup', [
+        'uses' => 'UserController@getSignup',
+        'as' => 'user.signup'
     ]);
 
     // 自作の事業者登録のポスト送信？
-    Route::post('/signup',[
+    Route::post('/signup', [
         'uses' => 'UserController@postSignup',
         'as' => 'user.signup'
-        ]);
+    ]);
+});
 
-    });
-
-        // ユーザー退会処理のルーティング
-        Route::post('/user', 'UsersController@withdrawal')->name('user.withdrawal');
-
-
-        // スレッド作成のルーティング
-        Route::get('/create', 'ThreadController@showCreateForm')->name('threads.create');
-        Route::post('/create', 'ThreadController@create');
+// ユーザー退会処理のルーティング
+Route::post('/user', 'UsersController@withdrawal')->name('user.withdrawal');
 
 
-            // 各カテゴリーのルーティング
-            Route::get('/food', 'ThreadcategoryController@showFood')->name('category.food');
 
-            Route::get('/workshop', 'ThreadcategoryController@shoWorkshop')->name('category.workshop');
+// スレッド作成のルーティング
+Route::get('/create', 'ThreadController@showCreateForm')->name('threads.create');
+Route::post('/create', 'ThreadController@create');
 
-            Route::get('/photo', 'ThreadcategoryController@showPhoto')->name('category.photo');
 
-            Route::get('/beauty', 'ThreadcategoryController@showBeauty')->name('category.beauty');
+// 各カテゴリーのルーティング
+Route::get('/food', 'ThreadcategoryController@showFood')->name('category.food');
 
-            Route::get('/seminar', 'ThreadcategoryController@showSeminar')->name('category.seminar');
+Route::get('/workshop', 'ThreadcategoryController@shoWorkshop')->name('category.workshop');
 
-            Route::get('/other', 'ThreadcategoryController@showOther')->name('category.other');
+Route::get('/photo', 'ThreadcategoryController@showPhoto')->name('category.photo');
+
+Route::get('/beauty', 'ThreadcategoryController@showBeauty')->name('category.beauty');
+
+Route::get('/seminar', 'ThreadcategoryController@showSeminar')->name('category.seminar');
+
+Route::get('/other', 'ThreadcategoryController@showOther')->name('category.other');
 
 
 
