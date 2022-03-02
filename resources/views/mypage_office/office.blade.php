@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ asset("/css/style.css") }}">
+<link rel="stylesheet" href="{{ secure_asset("/css/style.css") }}">
 @section('content')
   <div class="container">
     <div class="row">
@@ -17,11 +17,11 @@
             <form action="" method="POST">
               @csrf
               <label> {{ $user->name }}</label>
-              <p><img src="{{ asset("/img/new017/home.png") }}" alt="">{{ $user->address }}</p>
-              <p><img src="{{ asset("/img/new017/tel.png") }}" alt="">{{ $user->tel }}</p>
-              <p><img src="{{ asset("/img/new017/mail.png") }}" alt="">{{ $user->email }}</p>
-              <p><img src="{{ asset("/img/new017/recruit.png") }}" alt="">求人情報</p>
-              <p><img src="{{ asset("/img/new017/position.png") }}" alt="">位置情報</p>
+              <p><img src="{{ secure_asset("/img/new017/home.png") }}" alt="">{{ $user->address }}</p>
+              <p><img src="{{ secure_asset("/img/new017/tel.png") }}" alt="">{{ $user->tel }}</p>
+              <p><img src="{{ secure_asset("/img/new017/mail.png") }}" alt="">{{ $user->email }}</p>
+              <p><img src="{{ secure_asset("/img/new017/recruit.png") }}" alt="">求人情報</p>
+              <p><img src="{{ secure_asset("/img/new017/position.png") }}" alt="">位置情報</p>
 
             <a href="" class="btn btn-primary">マイページ編集</a>
               </div>

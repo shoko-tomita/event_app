@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <title>新規・登録済</title>
-    <link rel="stylesheet" href="{{ asset("/css/style.css") }}">
+    <link rel="stylesheet" href="{{ secure_asset("/css/style.css") }}">
     {{-- <link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-8/css/reset.css">
     <link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-8/css/5-8.css"> --}}
 </head>
@@ -16,7 +16,7 @@
     <header>
         <div id="particles-js"></div>
         <div id="wrapper">
-        <img class="atumal" src="{{ asset("/iOS-の画像.jpg") }}" alt="あつまる">
+        <img class="atumal" src="{{ secure_asset("/iOS-の画像.jpg") }}" alt="あつまる">
     </header>
     <main>
         <a class="btn btn-primary" href='/register'  role="" method="">事業登録</a>
