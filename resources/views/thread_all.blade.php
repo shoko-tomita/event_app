@@ -104,7 +104,7 @@
         </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="{{ secure_asset("/js/app.js") }}">
+    <script src="{{ secure_asset("/JS/app.js") }}">
     </script>
     <script>
         document.getElementById('logout').addEventListener('click', function(event) {
@@ -115,3 +115,7 @@
 </body>
 
 </html>
+http://intense-brook-45651.herokuapp.com/thread_all
+
+
+https://intense-brook-45651.herokuapp.com/thread_all
