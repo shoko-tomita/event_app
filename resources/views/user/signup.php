@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <title>事業所登録</title>
-    <link rel="stylesheet" href="{{ secure_asset("/css/style.css") }}">
+    <link rel="stylesheet" href="{{ asset("/css/style.css") }}">
 </head>
 
 <body>

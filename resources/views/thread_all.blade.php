@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <title>スレッド一覧</title>
-    <link rel="icon" href="{{ secure_asset('/favicon.png') }}">
-    <link rel="stylesheet" href="{{ secure_asset("/css/style.css") }}">
+    <link rel="icon" href="{{ asset('/favicon.png') }}">
+    <link rel="stylesheet" href="{{ asset("/css/style.css") }}">
 </head>
 
 <body>
@@ -33,7 +33,7 @@
     <div class="circle-bg"></div>
 
 
-          <img class="atumal" src="{{ secure_asset("/iOS-の画像.jpg") }}" alt="あつまる">
+          <img class="atumal" src="{{ asset("/iOS-の画像.jpg") }}" alt="あつまる">
 
           <a href="{{ route('threads.create') }}" class="btn btn-primary">スレッド作成</a>
 
@@ -43,7 +43,7 @@
             <div class="spinner"></div>
         </div>
 
-          <img src="{{ secure_asset("/img/new017/new017_10.gif") }}" alt="新着スレッド">
+          <img src="{{ asset("/img/new017/new017_10.gif") }}" alt="新着スレッド">
 
         <!-- スレッド作成の内容が本来表示 -->
 
