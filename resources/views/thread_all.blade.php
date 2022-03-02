@@ -115,7 +115,3 @@
 </body>
 
 </html>
-http://intense-brook-45651.herokuapp.com/thread_all
-
-
-https://intense-brook-45651.herokuapp.com/thread_all
