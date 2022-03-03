@@ -42,9 +42,9 @@
         <div id="loading">
             <div class="spinner"></div>
         </div>
-
+        <div class="thread">
           <img src="{{ asset("/img/new017/new017_10.gif") }}" alt="新着スレッド">
-
+        </div>
         <!-- スレッド作成の内容が本来表示 -->
 
         @foreach ($threads as $thread)
@@ -86,7 +86,7 @@
 
 
             </div>
-            <a  href="#" id="logout">ログアウト</a>
+            {{-- <a  href="#" id="logout">ログアウト</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>・
@@ -97,12 +97,27 @@
             }">
               退会
             </a>
-            <form id="withdrawal-form" action="{{ route('user.withdrawal') }}" method="post" style="display: none;">
-            @csrf
-            <form>
+            <form id="withdrawal-form" action="{{ route('user.withdrawal') }}" method="post" style="display: none;"> --}}
+
 
         </div>
     </main>
+    <footer>
+        <a  href="#" id="logout">ログアウト</a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>・
+        <a href="{{ route('user.withdrawal') }}" onclick="res = confirm('本当に退会しますか？');
+        event.preventDefault();
+        if( res == true ) {
+          document.getElementById('withdrawal-form').submit();
+        }">
+          退会
+        </a>
+        <form id="withdrawal-form" action="{{ route('user.withdrawal') }}" method="post" style="display: none;">
+        @csrf
+        <form>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="{{ asset("/JS/app.js") }}">
     </script>

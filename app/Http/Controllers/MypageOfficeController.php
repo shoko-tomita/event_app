@@ -13,22 +13,35 @@ class MypageOfficeController extends Controller
         return view('mypage_office/office', ['user' => User::findOrFail($id)]);
     }
 
+   /**
+     * タスク編集フォーム
+     * @param Uesr $user
+     * @return \Illuminate\View\View
+     */
 
+    public function OfficeEdit($id)
+{
+    $article = User::find($id->user_id);
+    return view('office.edit', ['user' => User::findOrFail($id)]);
+}
 
-//     public function edit($id)
-// {
-//     $article = User::find($id->id);
-//     return view('office.edit', ['user' => User::findOrFail($id)]);
-// }
+   /**
+      * タスク編集
+      * @param Uesr $user
+      * @param User $request
+      * @return \Illuminate\Http\RedirectResponse
+      */
 
-// public function update($id)
-// {
-//     $article = User::find($id->id);
-//     $article->title = $id->title;
-//     $article->thread_detail = $id->thread_detail;
-//     $article->save();
-//     return redirect('therad_all');
-// }
+public function update($id)
+{
+    $article = User::find($id->user_id);
+    $article->name = $id->names;
+    $article->address = $id->address;
+    $article->tel = $id->tel;
+    $article->email = $id->email;
+    $article->save();
+    return redirect('mypage.office');
+}
 
 
 //    /**

@@ -50,6 +50,21 @@ a:hover::after {
     width: 122px;
 }
 
+
+
+.thread {
+    text-align: left;
+    margin-left: 25%;
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 992px) {
+    .thread {
+        margin-left: 0;
+    }
+}
+
 /*========= particle js を描画するエリア設定 ===============*/
 
 html,body{
@@ -90,6 +105,12 @@ html,body{
     background-color: #fff;
     border-radius: 100%;
     animation: sk-scaleout 1.0s infinite ease-in-out;
+  }
+
+  @media (min-width: 992px){
+  .col-md-6 {
+      margin-right:25%;
+  }
   }
   /* ローディングアニメーション */
    @keyframes sk-scaleout {

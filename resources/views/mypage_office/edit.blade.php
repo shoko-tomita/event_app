@@ -15,35 +15,15 @@
             @endif
             {{-- <form action="{{ route('office.edit') }}" method="POST"> --}}
               @csrf
-            <div class="input-group input-group-sm">
-                <span class="input-group-text" id="input-group-sm-example">name</span>
-                <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-            </div>
-            <div class="input-group input-group-sm">
-                <span class="input-group-text" id="input-group-sm-example">address</span>
-                <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-            </div>
-            <div class="input-group input-group-sm">
-                <span class="input-group-text" id="input-group-sm-example">email</span>
-                <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-            </div>
-            <div class="input-group input-group-sm">
-                <span class="input-group-text" id="input-group-sm-example">tel</span>
-                <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-            </div>
-            <div class="input-group input-group-sm">
-                <span class="input-group-text" id="input-group-sm-example">位置情報</span>
-                <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-            </div>
-            <div class="input-group input-group-sm">
-                <span class="input-group-text" id="input-group-sm-example">求人情報</span>
-                <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-            </div>
-            <div class="input-group input-group-sm">
-                <span class="input-group-text" id="input-group-sm-example">password</span>
-                <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-            </div>
-            <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off">登録</button>
+              {{-- {{ old('title', $task->title) }} --}}
+              <label> {{ old('name', $user->name) }}</label>
+              <p><img src="{{ asset("/img/new017/home.png") }}" alt="">{{ old ('address', $user->address ) }}</p>
+              <p><img src="{{ asset("/img/new017/tel.png") }}" alt="">{{ old ('tel', $user->tel) }}</p>
+              <p><img src="{{ asset("/img/new017/mail.png") }}" alt="">{{ old ('email', $user->email) }}</p>
+              <p><img src="{{ asset("/img/new017/recruit.png") }}" alt="">求人情報</p>
+              <p><img src="{{ asset("/img/new017/position.png") }}" alt="">位置情報</p>
+
+            <a href="" class="btn btn-primary">マイページ編集</a>
               </div>
             </form>
           </div>
