@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Thread;
+use Illuminate\Suport\Facades\Auth;
+use App\Http\Requests\UpdateOffice;
 
 class MypageOfficeController extends Controller
 {
@@ -13,33 +15,25 @@ class MypageOfficeController extends Controller
         return view('mypage_office/office', ['user' => User::findOrFail($id)]);
     }
 
-   /**
-     * タスク編集フォーム
-     * @param Uesr $user
-     * @return \Illuminate\View\View
-     */
 
-    public function OfficeEdit($id)
+
+    public function OfficeEdit(int $id)
 {
-    $article = User::find($id->user_id);
-    return view('office.edit', ['user' => User::findOrFail($id)]);
+    dd($office = User::findOrFail($id));
+    exit;
+    $office = User::findOrFail($id);
+    return view('edit', ['users' => $office ,]);
 }
 
-   /**
-      * タスク編集
-      * @param Uesr $user
-      * @param User $request
-      * @return \Illuminate\Http\RedirectResponse
-      */
 
-public function update($id)
+public function update(int $id, UpdateOffice $request)
 {
-    $article = User::find($id->user_id);
-    $article->name = $id->names;
-    $article->address = $id->address;
-    $article->tel = $id->tel;
-    $article->email = $id->email;
-    $article->save();
+    $office = User::findOrFail('id',$id)-> first();
+    $office->name = $request->names;
+    $office->address = $request->address;
+    $office->tel = $request->tel;
+    $office->email = $request->email;
+    $office->save();
     return redirect('mypage.office');
 }
 

@@ -13,7 +13,9 @@
                 @endforeach
               </div>
             @endif
-            {{-- <form action="{{ route('office.edit') }}" method="POST"> --}}
+
+                @foreach($office as $office)
+                 <form action="{{ route('edit',['office' => $office->id]) }}" method="POST">
               @csrf
               {{-- {{ old('title', $task->title) }} --}}
               <label> {{ old('name', $user->name) }}</label>
@@ -26,6 +28,7 @@
             <a href="" class="btn btn-primary">マイページ編集</a>
               </div>
             </form>
+            @endforeach
           </div>
         </nav>
 
