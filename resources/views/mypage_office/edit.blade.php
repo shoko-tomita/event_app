@@ -14,21 +14,40 @@
               </div>
             @endif
 
-                @foreach($office as $office)
-                 <form action="{{ route('edit',['office' => $office->id]) }}" method="POST">
-              @csrf
-              {{-- {{ old('title', $task->title) }} --}}
-              <label> {{ old('name', $user->name) }}</label>
-              <p><img src="{{ asset("/img/new017/home.png") }}" alt="">{{ old ('address', $user->address ) }}</p>
-              <p><img src="{{ asset("/img/new017/tel.png") }}" alt="">{{ old ('tel', $user->tel) }}</p>
-              <p><img src="{{ asset("/img/new017/mail.png") }}" alt="">{{ old ('email', $user->email) }}</p>
-              <p><img src="{{ asset("/img/new017/recruit.png") }}" alt="">求人情報</p>
-              <p><img src="{{ asset("/img/new017/position.png") }}" alt="">位置情報</p>
 
-            <a href="" class="btn btn-primary">マイページ編集</a>
+                 <form action="{{ route('update',['id' => $office->id]) }}" method="POST">
+              @csrf
+
+
+              <div class="form-group">
+                <label for="title">会社名</label>
+                <input type="text" class="form-control" name="title" id="title" value="{{ old('name', $office->name) }}" />
+                <label for="title">住所</label>
+                <input type="text" class="form-control" name="text" id="text" value="{{ old ('address', $office->address ) }}" />
+                <label for="position">電話番号</label>
+                <input type="position" class="form-control" name="position" id="position" value="{{ old ('tel', $office->tel) }}" />
+                <label for="position">メールアドレス</label>
+                <input type="position" class="form-control" name="position" id="position" value="{{ old ('email', $office->email) }}" />
+                <label for="position">求人情報</label>
+                <input type="position" class="form-control" name="position" id="position" value="" />
+                <label for="position">位置情報</label>
+                <input type="position" class="form-control" name="position" id="position" value="" />
+              </div>
+              <div class="text-right">
+                <button type="submit" class="btn btn-primary">更新</button>
+              </div>
+
+              {{-- <input type="text" name="name" value=" {{ old('name', $office->name) }}" >
+              <img src="{{ asset("/img/new017/home.inputng") }}" alt="">
+              <input type="text" name="name" value=" {{ old ('address', $office->address ) }}" >
+              <input><img src="{{ asset("/img/new017/tel.png") }}" alt="">{{ old ('tel', $office->tel) }}</p>
+              <input><img src="{{ asset("/img/new017/mail.inputng") }}" alt="">{{ old ('email', $office->email) }}</input>
+              <p><img src="{{ asset("/img/new017/recruit.png") }}" alt="">求人情報</p>
+              <p><img src="{{ asset("/img/new017/inputosition.png") }}" alt="">位置情報</p>
+
+            <a href="" class="btn btn-primary">更新</a> --}}
               </div>
             </form>
-            @endforeach
           </div>
         </nav>
 

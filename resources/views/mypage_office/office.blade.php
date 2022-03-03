@@ -23,7 +23,7 @@
               <p><img src="{{ asset("/img/new017/recruit.png") }}" alt="">求人情報</p>
               <p><img src="{{ asset("/img/new017/position.png") }}" alt="">位置情報</p>
 
-            <a href="{{ route('office.edit',['id' => $user->id]) }}" class="btn btn-primary">マイページ編集</a>
+            <a href="{{ route('mypage_office.edit',['id' => $user->id]) }}" class="btn btn-primary">マイページ編集</a>
               </div>
             </form>
           </div>

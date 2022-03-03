@@ -19,10 +19,10 @@ class MypageOfficeController extends Controller
 
     public function OfficeEdit(int $id)
 {
-    dd($office = User::findOrFail($id));
-    exit;
+    // dd(12345);
+
     $office = User::findOrFail($id);
-    return view('edit', ['users' => $office ,]);
+    return view('mypage_office.edit', ['office' => $office ,]);
 }
 
 
@@ -34,7 +34,7 @@ public function update(int $id, UpdateOffice $request)
     $office->tel = $request->tel;
     $office->email = $request->email;
     $office->save();
-    return redirect('mypage.office');
+    return redirect('mypage_office/office');
 }
 
 

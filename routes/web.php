@@ -38,8 +38,8 @@ Route::get('/disp/{id}', 'ThreadController@show')->name('threads.disp');
 Route::get('/office/{id}', 'MypageOfficeController@mypageOffice')->name('mypage.office');
 
 // マイページ編集のルーティング
- Route::get('/edit/{id}', 'MypageOfficeController@OfficeEdit')->name('office.edit');
- Route::post('/edit/{id}', 'MypageOfficeController@update');
+ Route::get('/edit/{id}', 'MypageOfficeController@OfficeEdit')->name('mypage_office.edit');
+ Route::post('/edit/{id}', 'MypageOfficeController@update')->name('update');
 
 // Route::get('/edit/{id}', 'MypageOfficeController@edit')->name('office_edit');
 // Route::post('/edit/{id}', 'MypageOfficeController@update')->name('office_update');
