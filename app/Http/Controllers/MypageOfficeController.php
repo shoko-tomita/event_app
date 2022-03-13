@@ -28,13 +28,15 @@ class MypageOfficeController extends Controller
 
 public function update(int $id, UpdateOffice $request)
 {
-    $office = User::findOrFail('id',$id)-> first();
-    $office->name = $request->names;
+    $office = User::findOrFail($id)-> first();
+    $office->name = $request->name;
     $office->address = $request->address;
     $office->tel = $request->tel;
     $office->email = $request->email;
+ 
     $office->save();
-    return redirect('mypage_office/office');
+    return redirect()->route('mypage.office',['id' => $id ,]);
+    // return redirect('mypage_office/office');
 }
 
 

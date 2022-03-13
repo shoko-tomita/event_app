@@ -21,13 +21,13 @@
 
               <div class="form-group">
                 <label for="title">会社名</label>
-                <input type="text" class="form-control" name="title" id="title" value="{{ old('name', $office->name) }}" />
+                <input type="text" class="form-control" name="name" id="title" value="{{ old('name', $office->name) }}" />
                 <label for="title">住所</label>
-                <input type="text" class="form-control" name="text" id="text" value="{{ old ('address', $office->address ) }}" />
+                <input type="text" class="form-control" name="address" id="text" value="{{ old ('address', $office->address ) }}" />
                 <label for="position">電話番号</label>
-                <input type="position" class="form-control" name="position" id="position" value="{{ old ('tel', $office->tel) }}" />
+                <input type="position" class="form-control" name="tel" id="position" value="{{ old ('tel', $office->tel) }}" />
                 <label for="position">メールアドレス</label>
-                <input type="position" class="form-control" name="position" id="position" value="{{ old ('email', $office->email) }}" />
+                <input type="position" class="form-control" name="email" id="position" value="{{ old ('email', $office->email) }}" />
                 <label for="position">求人情報</label>
                 <input type="position" class="form-control" name="position" id="position" value="" />
                 <label for="position">位置情報</label>
@@ -46,7 +46,7 @@
               <p><img src="{{ asset("/img/new017/inputosition.png") }}" alt="">位置情報</p>
 
             <a href="" class="btn btn-primary">更新</a> --}}
-              </div>
+
             </form>
           </div>
         </nav>
