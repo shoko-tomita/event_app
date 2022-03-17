@@ -45,7 +45,6 @@ Route::get('/office/{id}', 'MypageOfficeController@mypageOffice')->name('mypage.
 // Route::post('/edit/{id}', 'MypageOfficeController@update')->name('office_update');
 
 
-
 // グループがよくわからない
 Route::group(['prefix' => 'user'], function () {
 
