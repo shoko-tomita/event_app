@@ -60,10 +60,10 @@
                   </div>
 
                   {{-- 位置情報はDBにareaカラムが無いから手入力で入れたものを反映させる --}}
-                  <label for="title">位置情報</label>
+                  <label><img src="{{ asset("/img/new017/position.png") }}" alt="">位置情報</label>
                   {{-- <input type="position" class="form-control" name="position" id="position" value="{{ old('position') }}" />
                 </div> --}}
-
+                <br>
                 <a href="{{ route('threads.disp',['id' => $thread->id]) }}" class="btn btn-primary">スレッド詳細</a>
 
                 </div>

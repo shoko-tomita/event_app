@@ -6,6 +6,7 @@ use App\Http\Requests\CreateThread;
 use Illuminate\Http\Request;
 use App\Thread;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\UpdateThread;
 
 
 class ThreadController extends Controller
@@ -67,5 +68,28 @@ class ThreadController extends Controller
         // リダイレクト
         return redirect()->route('thread_all');
       }
+
+    //   public function ThreadEdit(int $id)
+    //   {
+    //       // dd(12345);
+
+    //       $user = Thread::findOrFail($id);
+    //       return view('threads.edit', ['user' => $user ,]);
+    //   }
+
+
+    //   public function ThreadUpdate(int $id, UpdateThread $request)
+    //   {
+    //     $user = User::findOrFail($id)-> first();
+    //     $user->user_id = Auth::id();
+    //     $user->title = $request->input('title');
+    //     $user->thread_detail = $request->input('text');
+    //     $user->category_id = 1;
+
+
+    //       $user->save();
+    //       return redirect()->route('threads.disp', ['thread' => Thread::findOrFail($id)]);
+    //       // return redirect('mypage_office/office');
+    //   }
 
    }

@@ -35,6 +35,11 @@ Route::get('/thread_all', 'ThreadController@getThread')->name('thread_all');
 // スレッド詳細のルーティング
 Route::get('/disp/{id}', 'ThreadController@show')->name('threads.disp');
 
+// スレッド編集のルーティング
+// Route::get('disp/{id}', 'ThreadController@ThreadEdit')->name('threads.edit');
+// Route::post('disp/{id}', 'ThreadController@ThreadUpdate')->name('threads.update');
+
+// マイページ詳細のルーティング
 Route::get('/office/{id}', 'MypageOfficeController@mypageOffice')->name('mypage.office');
 
 // マイページ編集のルーティング
